@@ -6,7 +6,7 @@ This tool fetches GitHub commits, parses meeting notes, pulls ClickUp tasks, and
 
 ---
 
-## 📦 Features
+## Features
 
 - ✅ GitHub commit summary by author/date
 - ✅ Meeting note parser for decisions & blockers
@@ -17,14 +17,14 @@ This tool fetches GitHub commits, parses meeting notes, pulls ClickUp tasks, and
 
 ---
 
-## 📁 Example Output
+## Example Output
 
 - [Markdown Example ›](sample_output/weekly_report.md)
 - [Google Sheet Screenshot ›](assets/sheet_example.png)
 
 ---
 
-## ⚙️ How It Works
+## How It Works
 
 1. **Input sources:**
    - GitHub API
@@ -43,7 +43,7 @@ This tool fetches GitHub commits, parses meeting notes, pulls ClickUp tasks, and
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 
 - Python 3.11
 - `gspread`, `dotenv`, `requests`, `smtplib`
@@ -53,7 +53,7 @@ This tool fetches GitHub commits, parses meeting notes, pulls ClickUp tasks, and
 
 ---
 
-## 📦 Setup
+## Setup
 
 1. Clone the repo
 2. Install dependencies:  
