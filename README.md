@@ -59,15 +59,15 @@ This tool fetches GitHub commits, parses meeting notes, pulls ClickUp tasks, and
 ## Setup
 
 ### 1. Clone this repo
-
-```bash
 git clone https://github.com/anugya456/pm-notebook-generator.git
 cd pm-notebook-generator
-2. Install dependencies
+
+### 2. Install dependencies
 pip install -r requirements.txt
-3. Add credentials
+
+### 3. Add credentials
 Create a .env file with:
-   EMAIL_FROM=your_email@gmail.com
+ `  EMAIL_FROM=your_email@gmail.com
    EMAIL_PASSWORD=your_app_password
    EMAIL_TO=your_email@gmail.com
 
@@ -75,14 +75,14 @@ Create a .env file with:
    GITHUB_REPO=your_repo_name
    GITHUB_TOKEN=your_github_token
 
-   CLICKUP_API_TOKEN=your_clickup_token
+   CLICKUP_API_TOKEN=your_clickup_token  `
 
 Place gcp_credentials.json from Google Cloud Console into the root folder.
 
-4. Configure config.py
+### 4. Configure config.py
 Do not commit config.py — use config.example.py as a template.
 
-5. Run the tool
+### 5. Run the tool
 python main.py
 
 ## Why This Exists
