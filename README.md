@@ -1,19 +1,19 @@
-# pm-notebook-generator
+# PM Notebook Generator
 
 **Automated weekly reporting tool for project managers and product teams.**
 
-This tool fetches GitHub commits, parses meeting notes, pulls ClickUp tasks, and generates a clean weekly project report — published to Google Sheets and emailed to you automatically.
+This tool fetches GitHub commits, parses meeting notes, pulls ClickUp tasks, and generates a clean, organized weekly project report — published to Google Sheets and emailed to you automatically.
 
 ---
 
 ## Features
 
-- ✅ GitHub commit summary by author/date
-- ✅ Meeting note parser for decisions & blockers
-- ✅ ClickUp integration (API + CSV fallback)
-- ✅ Google Sheets output (monthly tab per report)
-- ✅ Email notifications with Markdown attachment
-- ✅ Windows Task Scheduler–ready (automated runs)
+- GitHub commit summary by author and date
+- Meeting note parser (decisions & blockers)
+- ClickUp task sync via API (CSV fallback optional)
+- Google Sheets reporting (monthly/quarterly tabs)
+- Email notifications with Markdown report attached
+- Compatible with Windows Task Scheduler for full automation
 
 ---
 
@@ -26,52 +26,70 @@ This tool fetches GitHub commits, parses meeting notes, pulls ClickUp tasks, and
 
 ## How It Works
 
-1. **Input sources:**
-   - GitHub API
-   - Meeting notes (markdown)
-   - ClickUp API or CSV fallback
+### Inputs
 
-2. **Process:**
-   - Parses inputs
-   - Formats weekly summary
-   - Writes to Google Sheet tab (e.g., `May 2025`)
-   - Sends email with Markdown report
+- GitHub commits via API
+- Meeting notes from markdown files
+- ClickUp tasks via API or CSV
 
-3. **Automation:**
-   - `.bat` script included
-   - Runs weekly via Windows Task Scheduler
+### Process
+
+1. Collects updates across sources
+2. Compiles decisions, blockers, and task statuses
+3. Formats and writes data into a timestamped Google Sheets tab
+4. Sends a Markdown summary via email
+
+### Automation
+
+- Included `.bat` script to run via **Windows Task Scheduler**
+- Designed for weekly cadence (e.g., Monday 10am)
 
 ---
 
 ## Tech Stack
 
-- Python 3.11
-- `gspread`, `dotenv`, `requests`, `smtplib`
+- **Python 3.11**
+- `gspread`, `requests`, `smtplib`, `dotenv`
 - Google Sheets API + Gmail App Password
-- ClickUp API
-- Markdown and CSV parsing
+- ClickUp REST API
+- Markdown/CSV parsing
 
 ---
 
 ## Setup
 
-1. Clone the repo
-2. Install dependencies:  
-   ```bash
-   pip install -r requirements.txt
-Add your .env:
+### 1. Clone this repo
 
-ini
-Copy
-Edit
-EMAIL_FROM=you@gmail.com
-EMAIL_PASSWORD=xxxx
-EMAIL_TO=you@gmail.com
-Add gcp_credentials.json from Google Cloud Console
+```bash
+git clone https://github.com/anugya456/pm-notebook-generator.git
+cd pm-notebook-generator
+2. Install dependencies
+pip install -r requirements.txt
+3. Add credentials
+Create a .env file with:
+   EMAIL_FROM=your_email@gmail.com
+   EMAIL_PASSWORD=your_app_password
+   EMAIL_TO=your_email@gmail.com
 
-Run the tool:
+   GITHUB_USERNAME=your_github_username
+   GITHUB_REPO=your_repo_name
+   GITHUB_TOKEN=your_github_token
 
-bash
-Copy
-Edit
+   CLICKUP_API_TOKEN=your_clickup_token
+
+Place gcp_credentials.json from Google Cloud Console into the root folder.
+
+4. Configure config.py
+Do not commit config.py — use config.example.py as a template.
+
+5. Run the tool
 python main.py
+
+## Why This Exists
+Most PMs manually track updates every week. This tool automates that — pulling real activity and packaging it into a readable format you can use in standups, reviews, or executive reports.
+
+## Author
+Built by Anugya, a tech-savvy PM with dev roots — passionate about automating grunt work and focusing on what matters: people, progress, and shipping.
+
+## Contact
+Found this useful? [Connect on LinkedIn](https://www.linkedin.com/in/fnu-anugya/) or drop a ⭐ on GitHub!
