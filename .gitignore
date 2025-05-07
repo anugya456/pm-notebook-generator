@@ -1,0 +1,9 @@
+.env
+gcp_credentials.json
+.venv/
+__pycache__/
+*.pyc
+log.txt
+weekly_report.md
+config.py
+run_pm_notebook.bat

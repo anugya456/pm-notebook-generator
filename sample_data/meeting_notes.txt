@@ -1,0 +1,10 @@
+Decided to disable Gmail automation due to API throttling risks.
+Filtering accuracy improved after TF-IDF threshold tweak.
+Job filtering script is blocked by LinkedIn’s anti-bot detection.
+Approved dashboard prototype for Looker Studio.
+GSheet writer now handles batch updates with overwrite logic.
+Risk: Sheet API quota limits may cause downstream sync delays.
+Team agreed to skip Slack alert integration for MVP scope.
+Script crashes when job description is missing key fields — needs fix.
+We finalized the ingestion → scoring → output flow architecture.
+Resolved confusion around config file naming conventions.

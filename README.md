@@ -19,8 +19,8 @@ This tool fetches GitHub commits, parses meeting notes, pulls ClickUp tasks, and
 
 ## Example Output
 
-- [Markdown Example ›](sample_output/weekly_report.md)
-- [Google Sheet Screenshot ›](assets/sheet_example.png)
+- [Markdown Example ›](sample_output/weekly_report_example.md)
+- [Google Sheet Screenshot ›](sample_output/sheets_example.png)
 
 ---
 
