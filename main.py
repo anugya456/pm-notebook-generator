@@ -52,7 +52,7 @@ def main():
 
     print("\nGenerating report...")
     generate_markdown_report(commits, notes, tasks)
-    write_to_google_sheets(tasks, sheet_name=GOOGLE_SHEET_NAME)
+    write_to_google_sheets(tasks, notes, sheet_name=GOOGLE_SHEET_NAME)
     send_email()
 
 if __name__ == "__main__":

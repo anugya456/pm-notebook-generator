@@ -2,7 +2,11 @@ from datetime import datetime
 
 def generate_markdown_report(commits, notes=None, tasks=None, output_path="weekly_report.md"):
     if notes is None:
-        notes = {"decisions": [], "blockers": []}
+        notes = {
+            "decisions": [], "blockers": [],
+            "actions": [], "learnings": [],
+            "highlights": [], "agreements": []
+        }
     if tasks is None:
         tasks = {"done": [], "in_progress": [], "blocked": []}
 
@@ -22,21 +26,21 @@ def generate_markdown_report(commits, notes=None, tasks=None, output_path="weekl
         else:
             f.write("*No new commits for this period.*\n")
 
-        # === Key Decisions ===
-        f.write("\n\n## 📌 Key Decisions\n\n")
-        if notes["decisions"]:
-            for decision in notes["decisions"]:
-                f.write(f"- {decision}\n")
-        else:
-            f.write("*No decisions recorded for this period.* \n")
+        # === Meeting Notes Sections ===
+        def write_section(title, emoji, key, empty_msg):
+            f.write(f"\n\n## {emoji} {title}\n\n")
+            if notes.get(key):
+                for item in notes[key]:
+                    f.write(f"- {item}\n")
+            else:
+                f.write(f"*{empty_msg}*\n")
 
-        # === Blockers / Risks ===
-        f.write("\n\n## 🚧 Blockers / Risks\n\n")
-        if notes["blockers"]:
-            for blocker in notes["blockers"]:
-                f.write(f"- {blocker}\n")
-        else:
-            f.write("*No blockers or risks recorded this week.*\n")
+        write_section("Key Decisions", "📌", "decisions", "No decisions recorded for this period.")
+        write_section("Blockers / Risks", "🚧", "blockers", "No blockers or risks recorded this week.")
+        write_section("Action Items", "✅", "actions", "No action items this week.")
+        write_section("Learnings", "🧠", "learnings", "No learnings captured.")
+        write_section("Highlights", "🚀", "highlights", "No highlights this week.")
+        write_section("Agreements", "🤝", "agreements", "No agreements documented.")
 
         # === ClickUp Tasks ===
         f.write("\n\n## Task Tracker (ClickUp)\n")
