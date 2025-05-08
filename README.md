@@ -70,15 +70,17 @@ pip install -r requirements.txt
 
 ### 3. Add credentials
 Create a .env file with:
- `  EMAIL_FROM=your_email@gmail.com
-   EMAIL_PASSWORD=your_app_password
-   EMAIL_TO=your_email@gmail.com
+```env
+EMAIL_FROM=your_email@gmail.com
+EMAIL_PASSWORD=your_app_password
+EMAIL_TO=your_email@gmail.com
 
-   GITHUB_USERNAME=your_github_username
-   GITHUB_REPO=your_repo_name
-   GITHUB_TOKEN=your_github_token
+GITHUB_USERNAME=your_github_username
+GITHUB_REPO=your_repo_name
+GITHUB_TOKEN=your_github_token
 
-   CLICKUP_API_TOKEN=your_clickup_token  `
+CLICKUP_API_TOKEN=your_clickup_token
+```
 
 Place gcp_credentials.json from Google Cloud Console into the root folder.
 
