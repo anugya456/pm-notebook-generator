@@ -9,11 +9,13 @@ This tool fetches GitHub commits, parses meeting notes, pulls ClickUp tasks, and
 ## Features
 
 - GitHub commit summary by author and date
-- Meeting note parser (decisions & blockers)
+- Google Docs integration for weekly meeting notes
+- Parses: decisions, blockers, action items, learnings, highlights, agreements
 - ClickUp task sync via API (CSV fallback optional)
 - Google Sheets reporting (monthly/quarterly tabs)
 - Email notifications with Markdown report attached
 - Compatible with Windows Task Scheduler for full automation
+
 
 ---
 
@@ -29,20 +31,21 @@ This tool fetches GitHub commits, parses meeting notes, pulls ClickUp tasks, and
 ### Inputs
 
 - GitHub commits via API
-- Meeting notes from markdown files
+- Meeting notes from Google Docs (title: `PM Notes - May 2025`)
 - ClickUp tasks via API or CSV
 
 ### Process
 
-1. Collects updates across sources
-2. Compiles decisions, blockers, and task statuses
-3. Formats and writes data into a timestamped Google Sheets tab
-4. Sends a Markdown summary via email
+1. Collects updates from all sources
+2. Extracts structured insights: Decisions, Blockers, Action Items, Learnings, Highlights, Agreements
+3. Writes the summary to Google Sheets (by month)
+4. Sends the same report as a Markdown email attachment
 
 ### Automation
 
-- Included `.bat` script to run via **Windows Task Scheduler**
-- Designed for weekly cadence (e.g., Monday 10am)
+- Included `.bat` script to run via Windows Task Scheduler
+- Designed for weekly cadence (e.g., every Monday 10:00 AM)
+
 
 ---
 
